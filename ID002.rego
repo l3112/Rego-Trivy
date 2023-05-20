@@ -27,21 +27,9 @@ package user.terraform.ID002
 
 default allow = false
 
-allow  { #do I need input.aws_s3_bucket outside the brackets?
-  array := input.aws_s3_bucket[_]
-  array.config.bucket == "ca_*" #should it say something other than array.config.bucket?
- 
- }
-  
-allow {
-  
-	regex.match("ca_*", aws_s3_bucket) # the second bit in parentheses should maybe say something else?
-	
-}
+package example.aws.s3
 
-
-deny[res] {
-    input.kind == "Deployment"
-    msg := sprintf("Found deployment '%s' but deployments are not allowed", [input.metadata.name])
-    res := result.new(msg, input.kind)
+deny_bucket_creation {
+    input.request.operation == "CreateBucket"
+    not startswith(input.parameters.bucketName, "ca_")
 }
