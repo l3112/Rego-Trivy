@@ -29,6 +29,12 @@ default allow = false
 
 package example.aws.s3
 
+deny[res] {
+    input.kind == "Deployment"
+    msg := sprintf("Found deployment '%s' but deployments are not allowed", [input.metadata.name])
+    res := result.new(msg, input.kind)
+    }
+
 deny_bucket_creation {
     input.request.operation == "CreateBucket"
     not startswith(input.parameters.bucketName, "ca_")
