@@ -10,8 +10,6 @@
 
 package user.terraform.ID002
 
-# package trivy
-
 # import data.lib.trivy
 
 
