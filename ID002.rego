@@ -25,7 +25,6 @@ package user.terraform.ID002
 
 default allow = false
 
-package example.aws.s3
 
 deny[res] {
     input.kind == "Deployment"
