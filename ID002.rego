@@ -23,7 +23,7 @@ package user.terraform.ID002
 ## drag a .tf file into the directory it's looking in
 ## I don't get it either but alas.
 
-default allow = false
+# default allow = false //it doesn't like it.
 
 
 deny[res] {
