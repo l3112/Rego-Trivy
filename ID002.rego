@@ -24,7 +24,7 @@ package user.terraform.ID002
 ## I don't get it either but alas.
 
 default allow = false
-
+#may need to be removed
 
 deny[res] {
     input.kind == "Deployment"
