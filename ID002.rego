@@ -26,7 +26,7 @@ package user.terraform.ID002
 default allow = false
 #may need to be removed
 
-allow := true if { bucketName == "ca_"*} 
+makeBucket if {input.parameters.bucketName == "ca_"} 
 
 deny[res] {
     input.kind == "Deployment"
