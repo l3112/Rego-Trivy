@@ -26,6 +26,8 @@ package user.terraform.ID002
 default allow = false
 #may need to be removed
 
+allow := true if { bucketName == "ca_"*} 
+
 deny[res] {
     input.kind == "Deployment"
     msg := sprintf("Found deployment '%s' but deployments are not allowed", [input.metadata.name])
