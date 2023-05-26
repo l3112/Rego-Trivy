@@ -12,6 +12,7 @@ package user.terraform.ID002
 
 # import data.lib.trivy
 
+# Since this file scans for a terraform file we don't need a data variable to input another file I suppose
 
 # Use this one in that open Rego policy checker.
 
